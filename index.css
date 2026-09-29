@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --sky-top: #dcebf7;
+  --sky-bottom: #fdf3e3;
+  --ink: #1c3d52;
+  --slate: #5c7688;
+  --card: #ffffff;
+  --sun: #ef9d3d;
+  --line: #e3e1d8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  font-family: 'Inter', sans-serif;
+  color: var(--ink);
+  background: linear-gradient(160deg, var(--sky-top) 0%, var(--sky-bottom) 100%);
+}
+
+.container {
+  width: 100%;
+  max-width: 380px;
+}
+
+h1 {
+  margin: 0 0 24px;
+  text-align: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  letter-spacing: 0.01em;
+}
+
+h1 span {
+  color: var(--sun);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.search-box {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+#cityInput {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+#cityInput:focus {
+  outline: none;
+  border-color: var(--sun);
+  box-shadow: 0 0 0 3px rgba(239, 157, 61, 0.18);
+}
+
+#cityInput::placeholder {
+  color: var(--slate);
+}
+
+#searchBtn {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  background: var(--ink);
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+#searchBtn:hover {
+  background: #14303f;
+}
+
+#searchBtn:focus-visible {
+  outline: 2px solid var(--sun);
+  outline-offset: 2px;
+}
+
+.weather-card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 32px 28px;
+  text-align: center;
+  box-shadow: 0 20px 40px -24px rgba(28, 61, 82, 0.35);
+  border-top: 3px solid var(--sun);
+}
+
+#cityName {
+  margin: 0 0 20px;
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.weather-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+#weatherIcon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+#temperature {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+#description {
+  margin: 10px 0 26px;
+  color: var(--slate);
+  font-size: 1rem;
+}
+
+.weather-details {
+  display: flex;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+
+.weather-details div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.weather-details div:first-child {
+  border-right: 1px solid var(--line);
+}
+
+.weather-details span {
+  font-size: 1.2rem;
+}
+
+.weather-details p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--slate);
+}
+
+.weather-details strong {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #searchBtn {
+    transition: background 0.15s ease;
+  }
+}
